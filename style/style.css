@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Inter&family=Lobster&family=Open+Sans&family=Pacifico&family=Poppins:wght@400;500;700&family=Work+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* navbar styles */
+nav {
+  background: white;
+  padding: 0 15px;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 24px !important;
+  font-weight: 700;
+  padding: 7.5px 10px 7.5px 0;
+}
+.item {
+  padding: 10px;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+  font-weight: 600;
+}
+.menu li.subitem a {
+  padding: 15px;
+}
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.active .item {
+  display: block;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+  .toggle {
+    flex: 1;
+    text-align: right;
+    order: 2;
+  }
+
+  /* Desktop menu */
+  @media all and (min-width: 960px) {
+    .menu {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      background: none;
+    }
+    .logo {
+      order: 0;
+    }
+    .item {
+      order: 1;
+      position: relative;
+      display: block;
+      width: auto;
+    }
+
+    .submenu-active .submenu {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 68px;
+      background: #111;
+    }
+    .toggle {
+      display: none;
+    }
+    .submenu-active {
+      border-radius: 0;
+    }
+  }
+}
+/* banner styles */
+.banner-container {
+  display: flex;
+  margin-top: 4.5rem;
+  gap: 130px;
+  padding: 0 15px;
+}
+.banner-image img {
+  width: 20vw;
+  height: auto;
+}
+
+.banner-content h1 {
+  font-size: 52px;
+  margin-right: 5rem;
+  margin-bottom: 3rem;
+}
+
+.banner-content p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  margin-right: 25rem;
+}
+
+.banner-btn {
+  padding: 10px 24px;
+  border-radius: 41px;
+  background-color: #e02c6d;
+  color: white;
+  border: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* banner responsive style */
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 95%;
+  }
+  .banner-container {
+    margin-top: 0;
+    gap: 14px;
+  }
+  .banner-image img {
+    width: 100%;
+  }
+  .banner-content h1 {
+    font-size: 2rem;
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .banner-content p {
+    font-size: 1rem;
+    margin-right: 0;
+    text-align: center;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-container {
+    flex-direction: column-reverse;
+  }
+}

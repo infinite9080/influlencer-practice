@@ -5,9 +5,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- My Styles -->
     <link rel="stylesheet" href="/style/style.css">
     <title>Influencer Project</title>
 </head>
+<header>
+    <nav class="container">
+        <ul class="menu">
+            <li class="logo"><a href="#">Influencer Products</a></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Products</a></li>
+            <li class="item"><a href="#">Sign up</a></li>
+            <li class="item"><a href="#">Log in</a>
+            </li>
+            <li class="toggle"><a href="#"><i class="fa fa-bars"></i></a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="container">
+        <div class="banner-container">
+            <div class="banner-content">
+                <h1>Start Your Journey as
+                    Influencer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem vestibulum sed scelerisque eros. Lectus
+                    faucibus.</p>
+                <div class="btn-container">
+                    <button class="banner-btn">Preebook now</button>
+                </div>
+            </div>
+            <div class="banner-image">
+                <img src="./images/main-camera.png" alt="">
+            </div>
+
+        </div>
+    </section>
+</main>
+<footer>
+
+</footer>
+
+
+
+<!-- copy paste Code -->
+<script>const toggle = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
+    const items = document.querySelectorAll(".item");
+
+    /* Toggle mobile menu */
+    function toggleMenu() {
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+            toggle.querySelector("a").innerHTML = "<i class='fa fa-bars'></i>";
+        } else {
+            menu.classList.add("active");
+            toggle.querySelector("a").innerHTML = "<i class='fa fa-times'></i>";
+        }
+    }
+
+    /* Activate Submenu */
+    function toggleItem() {
+        if (this.classList.contains("submenu-active")) {
+            this.classList.remove("submenu-active");
+        } else if (menu.querySelector(".submenu-active")) {
+            menu.querySelector(".submenu-active").classList.remove("submenu-active");
+            this.classList.add("submenu-active");
+        } else {
+            this.classList.add("submenu-active");
+        }
+    }
+
+    /* Close Submenu From Anywhere */
+    function closeSubmenu(e) {
+        if (menu.querySelector(".submenu-active")) {
+            let isClickInside = menu
+                .querySelector(".submenu-active")
+                .contains(e.target);
+
+            if (!isClickInside && menu.querySelector(".submenu-active")) {
+                menu.querySelector(".submenu-active").classList.remove("submenu-active");
+            }
+        }
+    }
+    /* Event Listeners */
+    toggle.addEventListener("click", toggleMenu, false);
+    for (let item of items) {
+        if (item.querySelector(".submenu")) {
+            item.addEventListener("click", toggleItem, false);
+        }
+        item.addEventListener("keypress", toggleItem, false);
+    }
+    document.addEventListener("click", closeSubmenu, false);</script>
 
 <body>
 
